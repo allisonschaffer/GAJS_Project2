@@ -1,0 +1,165 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Feedr @ GA</title>
+  <link rel="stylesheet" href="styles/normalize.css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="styles/html5bp.css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="styles/style.css" media="screen" charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+  <header>
+    <img src="images/feedr.png" alt="logo" class="logo">
+    <section class="container">
+      <nav>
+<!--         <ul> -->
+<!--           <li><a href="#">News Source: <span>Source Name</span></a> -->
+            <ul class="clearfix">
+              <li class='digg'><a href="#">Digg</a></li>
+              <li class='reddit'><a href="#">Reddit</a></li>
+              <li class='google'><a href="#">Google</a></li>
+            </ul>
+            <div class="clearfix"></div>
+       <!--    </li> -->
+<!--         </ul> -->
+<!--         <section id="search">
+          <input type="text" name="name" value="">
+          <a href="#"><img src="images/search.png" alt="" /></a>
+        </section> -->
+      </nav>
+      <div class="clearfix"></div>
+    </section>
+  </header>
+
+  <section id="main" class="container">     
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+  <script src="js/app.js"></script>
+
+
+
+
+  <script id="feedItems" type="text/x-handlebars-template">
+
+    <article class="article">
+      <section class="featuredImage">
+        <img src= "{{content.media.images.5.url}}" alt="" />
+      </section>
+      <section class="articleContent">
+        <a href="#"><h3 class="titleLink">{{content.title}}</h3></a>
+        <h6>{{tagsList content.tags}}
+
+        </section>
+        <section class="impressions">
+          {{digg_score}}
+        </section>
+        <div class="clearfix"></div>
+      </article>
+
+    </script>
+
+
+
+    <script id="feedItems2" type="text/x-handlebars-template">
+
+      <article class="article">
+        <section class="featuredImage">
+          <img src="images/reddit.png" alt=""/>
+        </section>
+        <section class="articleContent">
+          <a href="#"><h3 class="titleLink">{{data.title}}</h3></a>
+          <h6>{{data.author}}
+
+          </section>
+          <section class="impressions">
+            {{data.score}}
+          </section>
+          <div class="clearfix"></div>
+        </article>
+
+      </script>
+
+
+
+      <script id="feedItems3" type="text/x-handlebars-template">
+
+        <article class="article">
+          <section class="featuredImage">
+            <img src="images/google.jpg" alt=""/>
+          </section>
+          <section class="articleContent">
+            <a href="#"><h3 class="titleLink">{{title}}</h3></a>
+            <h6>{{categories}}
+
+            </section>
+            <section class="impressions">
+              400
+            </section>
+            <div class="clearfix"></div>
+          </article>
+
+        </script>
+
+
+
+        <script id="popUpArticle" type="text/x-handlebars-template">
+
+          <div id="popUp" class="loader hidden">
+            <a href="#" class="closePopUp">X</a>
+            <div class="container">
+            <h1 class="title">{{content.title}}</h1>
+              <p>
+                {{content.description}}
+              </p>
+              <a href="{{content.url}}" class="popUpAction" target="_blank">Read more from source</a>
+            </div>
+          </div>
+
+        </script>
+
+
+        <script id="popUpArticle2" type="text/x-handlebars-template">
+
+          <div id="popUp" class="loader hidden">
+            <a href="#" class="closePopUp">X</a>
+            <div class="container">
+              <h1 class="title">{{data.title}}</h1>
+              <p>
+                <iframe src="{{data.url}}"></iframe>
+              </p>
+              <a href="{{data.url}}" class="popUpAction" target="_blank">Read more from source</a>
+            </div>
+          </div>
+
+        </script>
+
+        <script id="popUpArticle3" type="text/x-handlebars-template">
+
+          <div id="popUp" class="loader hidden">
+            <a href="#" class="closePopUp">X</a>
+            <div class="container">
+              <h1 class="title">{{title}}</h1>
+              <p>
+                <iframe src="{{link}}"></iframe>
+              </p>
+              <a href="{{link}}" class="popUpAction" target="_blank">Read more from source</a>
+            </div>
+          </div>
+
+        </script>
+
+      </body>
+      </html>
